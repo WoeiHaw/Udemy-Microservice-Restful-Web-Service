@@ -1,7 +1,6 @@
-package com.in28minutes.rest.webservices.restful_web_services.use;
+package com.in28minutes.rest.webservices.restful_web_services.user;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class User {
 
