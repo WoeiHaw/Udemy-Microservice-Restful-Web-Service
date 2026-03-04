@@ -1,6 +1,5 @@
-package com.in28minutes.rest.webservices.restful_web_services;
+package com.in28minutes.rest.webservices.restful_web_services.user;
 
-import com.in28minutes.rest.webservices.restful_web_services.user.User;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -8,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class UserDaoService {
+public  class UserDaoService {
 
     private static List<User> users = new ArrayList<>();
 
@@ -26,10 +25,10 @@ public class UserDaoService {
     }
 
     public User findOne(int userId){
-//        for(var user:users){
-//            if(user.getId() == 1) return user;
-//        }
-//        return null;
+        //        for(var user:users){
+        //            if(user.getId() == 1) return user;
+        //        }
+        //        return null;
 
         return users.stream().filter(user->user.getId()==userId).findFirst().orElse(null);
     }
@@ -39,4 +38,9 @@ public class UserDaoService {
         users.add(user);
         return user;
     }
+
+    public void deleteUserById(int userId){
+        users.removeIf(user->user.getId()==userId);
+    }
+
 }
